@@ -18,13 +18,13 @@
 }
 
 .countdown {
-    width: 30%;
+    width: 85%;
     color: #c4a9a9;
     margin-top: 40px !important;
 }
 
 .action {
-    width: 30%;
+    width: 85%;
     background-color: #202231;
     color: #ffffff;
     padding: 20px 25px !important;
@@ -60,10 +60,21 @@
     background-image: linear-gradient(to right, #622267, #1D4B7A);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 975px) {
 
     .action, .countdown, .info {
-        width: 85%;
+        width: 30%;
+    }
+
+    .countdown li span {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 768px){
+
+    .action, .countdown, .info {
+        width: 45%;
     }
 
     .countdown li span {
