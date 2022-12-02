@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    </link>
+    <title>EVM Authentication</title>
+</head>
+
+<body>
+    <div class="m-container">
+        <nav class="navbar d-flex justify-content-between py-2 px-3">
+            <a href="/">
+                <img class="logo rounded-circle" src="img/logo.png" alt="DPV Logo" />
+            </a>
+
+            <div class="">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#accountModal"
+                    id="account-btn" style="display: none;">
+                    0x000...0000
+                </button>
+                <button class="btn my-2 my-sm-0 ml-2" id="connect-btn">
+                    Connect
+                </button>
+            </div>
+        </nav>
+        <section class="d-flex justify-content-center align-items-center flex-column" id="auth-section">
+            <section class="countdown">
+                <h1 class="h3 text-center">Blockchain-based Authentication</h1>
+            </section>
+            <section class="action mt-3">
+                <p>Balance: <span id="user-token-balance">0</span> SAT</p>
+                <form class="mt-4" id="form">
+                    <input type="text" class="form-control form-control-lg" id="username"
+                        placeholder="Username" required>
+                    <p class="text-end fst-italic">Balance: <i id="user-bnb-balance">0</i> BNB</p>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-lg w-100 px-4" id="authentication-btn" disabled>
+                            Sign in
+                        </button>
+                    </div>
+                    <p class="text-center mt-2" id="message"></p>
+                </form>
+            </section>
+            <p class="text-center mt-2" id="sign-up-message">
+                <span class="text-light">Don't have an account? </span>
+                <a href="#" class="text-decoration-none" id="sign-up-action">Sign up</a>
+            </p>
+            <p class="text-center mt-2" id="sign-in-message" style="display: none;">
+                <span class="text-light">Have an account? </span>
+                <a href="#" class="text-decoration-none" id="sign-in-action">Sign in</a>
+            </p>
+        </section>
+
+        <section class="success" id="sign-up-feedback" style="display: none;">
+            <h3 class="text-center">SUCCESS</h3>
+            <p class="text-center text-warning">Successfully registered! You have being rewarded with 5 Secure Access Token (SAT)</p>
+            <p class="text-center mt-2" id="message"></p>
+        </section>
+
+        <section class="success" id="sign-in-feedback" style="display: none;">
+            <h3 class="text-center">SUCCESS</h3>
+            <p class="text-center text-warning">You have being authorized</p>
+        </section>
+        
+        <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Connected</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="user-account">0x000000000000000000000000000000000000000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal" id="disconnect-btn">Disconnect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+        integrity="sha512-GKw4QT/RccGJIwQxY3MhyiQ5pHrhQ8SuKFEafV+WcpOvtz7iYFQuQGFCvmGlHLctJTe8KrWU1FqvF7VOkEAJtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
